@@ -1,0 +1,26 @@
+version: 0.1
+release: 1
+name: oshinko-webui
+from: nodesource/centos7:6.3.1
+packages:
+ - wget
+ - git
+ports:
+ - value: 8080
+cmd:
+ - "/usr/src/app/launch.sh"
+workdir: /usr/src/app
+scripts:
+    - package: launch
+      exec: install
+    - package: npm_bower
+      exec: install
+    - package: go_stuff
+      exec: install
+    - package: app
+      exec: install
+    - package: chown
+      exec: install
+sources:
+ - url: https://github.com/radanalyticsio/oshinko-cli/releases/download/v0.2.2/oshinko-cli_v0.2.2_linux_amd64.tar.gz
+   md5sum: e84c9684b75fcd8c56491484b7f9af1f
