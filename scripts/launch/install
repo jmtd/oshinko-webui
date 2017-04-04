@@ -1,0 +1,6 @@
+#!/bin/sh
+set -u
+set -e
+
+mkdir -p /usr/src/app
+cp /tmp/scripts/launch/added/launch.sh /usr/src/app

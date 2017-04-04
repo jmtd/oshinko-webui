@@ -1,0 +1,16 @@
+#!/bin/bash
+set -u
+set -e
+
+SRC=/tmp/scripts/npm_bower/added
+
+mkdir -p /usr/src/app
+
+cp -pt /usr/src/app \
+    "$SRC/package.json" \
+    "$SRC/bower.json"
+
+echo '{ "allow_root": true, "directory": "app/bower_components" }' > /usr/src/app/.bowerrc
+npm install
+npm install -g bower
+bower install

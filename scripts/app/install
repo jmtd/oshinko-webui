@@ -1,0 +1,9 @@
+#!/bin/sh
+set -u
+set -e
+
+SRC=/tmp/scripts/app/added
+
+cd $SRC
+
+cp -a * /usr/src/app

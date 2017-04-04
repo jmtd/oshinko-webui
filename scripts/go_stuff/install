@@ -1,0 +1,9 @@
+set -u
+set -e
+
+CLI_VER=v0.2.2
+TAR=/tmp/artifacts/oshinko-cli_${CLI_VER}_linux_amd64.tar.gz
+tar -zxvf "$TAR" -C /usr/src/app
+mv /usr/src/app/oshinko-cli_linux_amd64 /usr/src/app/oshinko-cli
+chmod +x /usr/src/app/oshinko-cli
+rm -rf "$TAR"
