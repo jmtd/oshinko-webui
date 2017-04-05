@@ -5,7 +5,7 @@ image: build/Dockerfile
 
 build/Dockerfile: image.yaml build run_dogen
 run_dogen:
-	docker run -it --rm -v $(shell pwd):/tmp/blah:z dogen:latest \
+	docker run -i --rm -v $(shell pwd):/tmp/blah:z dogen:latest \
 		--verbose \
 		/tmp/blah/image.yaml /tmp/blah/build
 
