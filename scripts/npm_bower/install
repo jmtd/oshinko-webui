@@ -3,6 +3,7 @@ set -u
 set -e
 
 SRC=/tmp/scripts/npm_bower/added
+cd "$SRC"
 
 mkdir -p /usr/src/app
 
@@ -11,6 +12,10 @@ cp -pt /usr/src/app \
     "$SRC/bower.json"
 
 echo '{ "allow_root": true, "directory": "app/bower_components" }' > /usr/src/app/.bowerrc
+
+MANPATH=
+. /opt/rh/rh-nodejs4/enable
+
 npm install
 npm install -g bower
 bower install
