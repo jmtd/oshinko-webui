@@ -1,6 +1,6 @@
 version: 1.0
 release: dev
-name: redhat-radanalytics-1-alpha/oshinko-webui1.0-openshift
+name: redhat-radanalytics-1-tech-preview/oshinko-webui1.0-openshift
 from: rhel7:7.3-released
 packages:
  - wget
